@@ -100,6 +100,9 @@ namespace Loans.Tests
                     item => item.ProductName == "a" &&
                             item.InterestRate == 1 &&
                             item.MonthlyRepayment > 0));
+
+            Assert.That(comparisons, Has.Exactly(1)
+                .Matches(new MonthlyRepaymentGreaterThanZeroConstraint("a", 1)));
         }
     }
 }

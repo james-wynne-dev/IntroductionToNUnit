@@ -9,7 +9,7 @@ namespace Loans.Tests
     {
         // Test in multiple categories
         [Test]
-        [Category("Product Comparison")]
+        [ProductComparison]
         [Category("xyz")]
         public void RespectValueEquality()
         {
