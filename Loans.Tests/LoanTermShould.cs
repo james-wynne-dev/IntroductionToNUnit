@@ -4,10 +4,13 @@ using System;
 
 namespace Loans.Tests
 {
-    [TestFixture]
+    // Can use Ignore tests at class level as well
+    [TestFixture] // This TestFixture is not necessary
     public class LoanTermShould
     {
+        
         [Test]
+        [Ignore("Message goes here!!!")] // prevent test from running
         public void ReturnTermInMonths()
         {
             // sut stands for system under test
@@ -67,7 +70,7 @@ namespace Loans.Tests
             Assert.That(() => new LoanTerm(0), Throws.TypeOf<ArgumentOutOfRangeException>()
                 .With
                 .Message
-                .EqualTo("Please specify a value greater than 0"));
+                .EqualTo("Please specify a value greater than 0.\r\nParameter name: years"));
 
             // correct ex and para name but don't care about the message
             Assert.That(() => new LoanTerm(0), Throws.TypeOf<ArgumentOutOfRangeException>()
